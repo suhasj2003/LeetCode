@@ -1,5 +1,5 @@
 class Solution {
-   public static void reverseString(char[] s) {
+   public void reverseString(char[] s) {
 		char a;
 		int i = 0;
 		for(; i < s.length/2; i++) {

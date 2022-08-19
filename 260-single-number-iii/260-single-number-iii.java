@@ -1,19 +1,21 @@
 class Solution {
-    public int[] singleNumber(int[] nums) {
-		HashSet<Integer> a = new HashSet<Integer>();
-		for (int i : nums) {
-			if(a.contains(i)) {
-				a.remove(i);
+   public int[] singleNumber(int[] nums) {
+		int num1 = 0, num2 = 0, bitSum = 0, i = 0;
+		for (int j : nums) {
+			bitSum ^= j;
+		}
+		while ((bitSum & 1) == 0) {
+			i++;
+			bitSum >>= 1;
+		}
+		for (int j : nums) {
+			if (((j >> i) & 1) == 0) {
+				num1 ^= j;
 			} else {
-				a.add(i);
+				num2 ^= j;
 			}
 		}
-		int[] result = new int[2];
-		int index = 0;
-		for (Integer i : a) {
-			result[index++] = i;			
-		}
-		return result;
+		return new int[] {num1, num2};
 	}
 
 }

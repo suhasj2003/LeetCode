@@ -6,10 +6,8 @@ class Solution {
 		HashSet<String> transformations = new HashSet<String>();
 		for (String word : words) {
 			StringBuilder convert = new StringBuilder();
-			int i;
 			for (Character c : word.toCharArray()) {
-				i = c - 97;
-				convert.append(morse.get(i));
+				convert.append(morse.get(c - 97));
 			}
 			transformations.add(convert.toString());
 		}

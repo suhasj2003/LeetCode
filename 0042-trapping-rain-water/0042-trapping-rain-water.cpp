@@ -2,7 +2,7 @@ class Solution {
 public:
     int trap(vector<int>& height) {
         int i = 0, j = height.size() - 1;
-        int start = 0, end = 0;
+        int start = height[i], end = height[j];
         int sum = 0;
         while (i < j) {
             start = start < height[i] ? height[i] : start;

@@ -19,7 +19,6 @@ class Solution {
                 count++;
             }
         }
-        // count++;
         temp.append(count);
         temp.append(curr);
         return cASAux(n - 1, temp.toString());
